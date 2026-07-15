@@ -1,5 +1,7 @@
-FROM nginx:alpine
+FROM python:3.12-alpine
 
-COPY index.html /usr/share/nginx/html/index.html
+WORKDIR /app
+COPY . /app
 
-EXPOSE 80
+EXPOSE 8000
+CMD ["python3", "app.py"]

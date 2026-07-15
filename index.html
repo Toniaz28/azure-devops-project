@@ -3,30 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Azure CI/CD Static Site</title>
+  <title>Maison Luxe | Interior Decor</title>
   <style>
+    :root {
+      --bg: #f7efe8;
+      --text: #2f241d;
+      --muted: #735b49;
+      --accent: #a66d4a;
+      --accent-dark: #7a4b2d;
+      --card: #fffaf4;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 2rem;
-      background: #f4f7fb;
-      color: #1f2937;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background: linear-gradient(135deg, #fdf7f0 0%, var(--bg) 100%);
     }
-    main {
-      max-width: 700px;
-      margin: auto;
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      padding: 3rem 5rem 2rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.2rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(166, 109, 74, 0.25);
+    }
+
+    .hero-card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 1.2rem;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    .hero-card img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 5rem 3rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .card {
       background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 18px;
+      padding: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
     }
-    h1 { color: #2563eb; }
+
+    .card h3 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.3rem 0.6rem;
+      background: #f3e0d0;
+      color: var(--accent-dark);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 2rem 1.2rem 1rem; }
+      .section { padding: 1rem 1.2rem 2rem; }
+      .cards { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Welcome to the Azure CI/CD Static Site</h1>
-    <p>This page is served from a Docker container.</p>
-  </main>
+  <header class="hero">
+    <div>
+      <div class="tag">Luxury Interiors • Crafted with Care</div>
+      <h1>Turn your home into a calm, elegant retreat.</h1>
+      <p>We blend timeless textures, sculptural lighting, and warm palettes to create spaces that feel both sophisticated and inviting.</p>
+      <a class="btn" href="#collections">Explore our collections</a>
+    </div>
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Elegant interior living room" />
+    </div>
+  </header>
+
+  <section class="section" id="collections">
+    <div class="cards">
+      <article class="card">
+        <h3>Modern Living</h3>
+        <p>Clean silhouettes, soft neutrals, and layered lighting for a serene everyday experience.</p>
+      </article>
+      <article class="card">
+        <h3>Warm Minimalism</h3>
+        <p>Natural woods and sculpted accents that bring comfort without losing sophistication.</p>
+      </article>
+      <article class="card">
+        <h3>Statement Spaces</h3>
+        <p>Bold textures, custom furnishings, and artful details designed to impress.</p>
+      </article>
+    </div>
+  </section>
 </body>
 </html>
